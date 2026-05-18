@@ -36,6 +36,11 @@ def show_menu():
     print("3. Buy 1 Weed")
     print("4. Sell 1 Weed")
     print("q. Quit")
+    print()
+    print("Current Market")
+    print(f"Weed sell price: £{weed_sell_price}")
+    print(f"Weed buy price: £{weed_buy_price}")
+    print()
    
 # Update Prices
 def update_prices():
@@ -51,12 +56,13 @@ def do_small_job():
     cash += 25
     reputation += 1
     day += 1
+    update_prices()
     print()
 
 
 # Buy 1 Weed
 def buy_weed():
-    global cash, day, weed
+    global cash, weed
     if cash >= weed_buy_price:
         print()
         cash -= weed_buy_price
@@ -70,15 +76,17 @@ def buy_weed():
             
 # Sell 1 Weed
 def sell_weed():
-    global cash, weed
+    global cash, weed, day
     if weed > 0:
+        sold_for = weed_sell_price
         weed -= 1
-        cash += weed_sell_price
+        cash += sold_for
         day += 1
         print()
         print(f"You sold 1 Weed for £{weed_sell_price}.")
         print(f"You currently have £{cash}.")
         print()
+        update_prices()
     else:
         print()
         print("You do not have enough Weed.")
@@ -88,8 +96,6 @@ def sell_weed():
 ############
 # Game Loop
 ############
-
-update_prices()
 
 while running:
     show_menu()

@@ -7,10 +7,13 @@ running = True
 while running:
     choice = input("Choose: ")
     
-    if choice == "i":
-        print(cash)
-        print(reputation)
-        print(day)
-    
-    if choice == "quit":
+    if choice == "1":
+        print("Cash:", cash)
+        print("Reputation:", reputation)
+        print("Day:", day)
+
+    elif choice == "2":
+        print("Quit")
         running = False
+    else:
+        print("Invalid choice")

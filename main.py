@@ -67,7 +67,7 @@ def buy_weed():
     total_cost = weed_buy_price * amount
 
     if amount <= 0:
-        print("Amount must be atleast 1.")
+        print("Amount must be at least 1.")
     
     elif cash >= total_cost:
         cash -= total_cost

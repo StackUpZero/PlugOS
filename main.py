@@ -58,22 +58,27 @@ def do_small_job():
     day += 1
     update_prices()
     print()
-
-
-# Buy 1 Weed
+        
+# Buy Weed           
 def buy_weed():
     global cash, weed
-    if cash >= weed_buy_price:
+    amount = input("How many Weed do you want to buy?")
+    amount = int(amount)
+    total_cost = weed_buy_price * amount
+
+    if cash >= total_cost:
+        cash -= total_cost
+        weed += amount
         print()
-        cash -= weed_buy_price
-        weed += 1
-        print("Item Bought\n+1 Weed")
+        print(f"Your brought {amount} Weed for £{total_cost}.")
+        print(f"Your current cash is £{cash}.")
         print()
+        
     else:
         print()
-        print("You do not have enough cash.")
+        print("You do not have enough cash!")
         print()
-            
+        
 # Sell 1 Weed
 def sell_weed():
     global cash, weed, day

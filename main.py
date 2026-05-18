@@ -3,6 +3,7 @@ reputation = 0
 day = 1
 weed = 0
 weed_price = 20
+sell_price = 25
 running = True
 
 while running:
@@ -38,10 +39,14 @@ while running:
             print()
     
     elif choice == "4":
-        if weed > 1:
+        if weed > 0:
             weed -= 1
+            cash += sell_price
+            day += 1
             print()
-            print("You sold 1 Weed.")
+            print("You sold 1 Weed for", sell_price, ".")
+            print("You currently have,", cash, ".")
+            print()
         else:
             print()
             print("You do not have enough Weed.")

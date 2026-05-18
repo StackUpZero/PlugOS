@@ -33,8 +33,8 @@ def show_stats():
 def show_menu():
     print("1. Show Stats")
     print("2. Do small job")
-    print("3. Buy 1 Weed")
-    print("4. Sell 1 Weed")
+    print("3. Buy Weed")
+    print("4. Sell Weed")
     print("q. Quit")
     print()
     print("Current Market")
@@ -66,12 +66,15 @@ def buy_weed():
     amount = int(amount)
     total_cost = weed_buy_price * amount
 
+    if amount <= 0:
+        print("Amount must be atleast 1.")
+    
     if cash >= total_cost:
         cash -= total_cost
         weed += amount
         print()
-        print(f"Your brought {amount} Weed for £{total_cost}.")
-        print(f"Your current cash is £{cash}.")
+        print(f"You bought {amount} Weed for £{total_cost}.")
+        print(f"You current cash is £{cash}.")
         print()
         
     else:
@@ -79,25 +82,29 @@ def buy_weed():
         print("You do not have enough cash!")
         print()
         
-# Sell 1 Weed
+# Sell Weed     
 def sell_weed():
     global cash, weed, day
-    if weed > 0:
-        sold_for = weed_sell_price
-        weed -= 1
-        cash += sold_for
+    amount = input("How much weed do you want to sell?")
+    amount = int(amount)
+    total_earned = weed_sell_price * amount
+
+    if amount <= 0:
+        print("Must be selling more than 0!")
+        
+    elif weed >= amount:
+        weed -= amount
+        cash += total_earned
         day += 1
         print()
-        print(f"You sold 1 Weed for £{weed_sell_price}.")
-        print(f"You currently have £{cash}.")
+        print(f"You sold {amount} of weed for {total_earned}!")
         print()
         update_prices()
     else:
         print()
         print("You do not have enough Weed.")
         print()
-            
-
+        
 ############
 # Game Loop
 ############

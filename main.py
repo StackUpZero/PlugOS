@@ -1,3 +1,4 @@
+
 cash = 100
 reputation = 0
 day = 1
@@ -12,13 +13,13 @@ while running:
     
     if choice == "1":
         print()
-        print("Cash:", cash)
-        print("Reputation:", reputation)
-        print("Day:", day)
-        print("Weed:", weed)
+        print(f"Cash: £{cash}")
+        print(f"Reputation:{reputation}")
+        print(f"Day:{day}")
+        print(f"Weed:{weed}")
         print()
 
-    elif choice =="2":
+    elif choice == "2":
         print()
         print("You did a small Job!")
         cash += 25
@@ -27,9 +28,9 @@ while running:
         print()
         
     elif choice == "3":
-        if cash >= weed_price:
+        if cash >= weed_buy_price:
             print()
-            cash -= weed_price
+            cash -= weed_buy_price
             weed += 1
             print("Item Brought\n+1 Weed")
             print()
@@ -41,11 +42,11 @@ while running:
     elif choice == "4":
         if weed > 0:
             weed -= 1
-            cash += sell_price
+            cash += weed_sell_price
             day += 1
             print()
-            print("You sold 1 Weed for", sell_price, ".")
-            print("You currently have £", cash)
+            print(f"You sold 1 Weed for £{weed_sell_price}.")
+            print(f"You currently have £{cash}.")
             print()
         else:
             print()

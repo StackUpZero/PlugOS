@@ -14,6 +14,7 @@ day = 1
 weed = 0
 weed_buy_price = 20
 weed_sell_price = 25
+goal_cash = 500
 running = True
 
 ############
@@ -29,6 +30,7 @@ def show_stats():
     print(f"Weed: {weed}")
     print(f"Weed buy price: £{weed_buy_price}")
     print(f"Weed sell price: £{weed_sell_price}")
+    print(f"Your goal is £{goal_cash}, you have £{cash}.")
     print()
      
 # Show Menu
@@ -139,7 +141,7 @@ def sell_weed():
         
 def check_game_over():
     global running
-    if cash >= 500:
+    if cash >= goal_cash:
         print("You Won!")
         running = False
                         

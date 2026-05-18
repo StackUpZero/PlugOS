@@ -58,53 +58,80 @@ def do_small_job():
     day += 1
     update_prices()
     print()
-        
-# Buy Weed           
+
+# Get Amount
+def get_amount(question):
+    amount = input(question)
+
+    try:
+        amount = int(amount)
+    except ValueError:
+        print()
+        print("Please enter a valid number.")
+        print()
+        return None
+
+    return amount
+       
+# Buy Weed
 def buy_weed():
     global cash, weed
-    amount = input("How many Weed do you want to buy?")
-    amount = int(amount)
+
+    amount = get_amount("How many Weed do you want to buy? ")
+
+    if amount is None:
+        return
+
     total_cost = weed_buy_price * amount
 
     if amount <= 0:
+        print()
         print("Amount must be at least 1.")
-    
+        print()
+
     elif cash >= total_cost:
         cash -= total_cost
         weed += amount
         print()
         print(f"You bought {amount} Weed for £{total_cost}.")
-        print(f"You current cash is £{cash}.")
+        print(f"Your current cash is £{cash}.")
         print()
-        
+
     else:
         print()
         print("You do not have enough cash!")
-        print()
-        
-# Sell Weed     
+        print()  
+# Sell Weed
 def sell_weed():
     global cash, weed, day
-    amount = input("How much weed do you want to sell?")
-    amount = int(amount)
+
+    amount = get_amount("How much Weed do you want to sell? ")
+
+    if amount is None:
+        return
+
     total_earned = weed_sell_price * amount
 
     if amount <= 0:
+        print()
         print("Must be selling more than 0!")
-        
+        print()
+
     elif weed >= amount:
         weed -= amount
         cash += total_earned
         day += 1
         print()
-        print(f"You sold {amount} of weed for {total_earned}!")
+        print(f"You sold {amount} Weed for £{total_earned}!")
+        print(f"Your current cash is £{cash}.")
         print()
         update_prices()
+
     else:
         print()
         print("You do not have enough Weed.")
         print()
-        
+                
 ############
 # Game Loop
 ############

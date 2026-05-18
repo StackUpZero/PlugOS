@@ -2,8 +2,8 @@ cash = 100
 reputation = 0
 day = 1
 weed = 0
-weed_price = 20
-sell_price = 25
+weed_buy_price = 20
+weed_sell_price = 25
 running = True
 
 while running:
@@ -45,7 +45,7 @@ while running:
             day += 1
             print()
             print("You sold 1 Weed for", sell_price, ".")
-            print("You currently have,", cash, ".")
+            print("You currently have £", cash)
             print()
         else:
             print()

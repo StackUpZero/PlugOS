@@ -1,6 +1,7 @@
 cash = 100
 reputation = 0
 day = 1
+weed = 0
 
 running = True
 
@@ -9,12 +10,15 @@ while running:
     choice = input("Choose: ")
     
     if choice == "1":
+        print()
         print("Cash:", cash)
         print("Reputation:", reputation)
         print("Day:", day)
+        print("Weed:", weed)
         print()
 
     elif choice =="2":
+        print()
         print("You did a small Job!")
         cash += 25
         reputation += 1

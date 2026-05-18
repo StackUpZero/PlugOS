@@ -77,7 +77,7 @@ def get_amount(question):
        
 # Buy Weed
 def buy_weed():
-    global cash, weed
+    global cash, weed, day
 
     amount = get_amount("How many Weed do you want to buy? ")
 
@@ -94,7 +94,7 @@ def buy_weed():
     elif cash >= total_cost:
         cash -= total_cost
         weed += amount
-        day +=1
+        day += 1
         print()
         print(f"You bought {amount} Weed for £{total_cost}.")
         print(f"Your current cash is £{cash}.")
@@ -136,7 +136,13 @@ def sell_weed():
         print()
         print("You do not have enough Weed.")
         print()
-                
+        
+def check_game_over():
+    global running
+    if cash >= 500:
+        print("You Won!")
+        running = False
+                        
 ############
 # Game Loop
 ############
@@ -165,4 +171,4 @@ while running:
         print("Invalid choice")
         print()
         
-        
+    check_game_over

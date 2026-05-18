@@ -171,4 +171,4 @@ while running:
         print("Invalid choice")
         print()
         
-    check_game_over
+    check_game_over()

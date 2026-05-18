@@ -69,7 +69,7 @@ def buy_weed():
     if amount <= 0:
         print("Amount must be atleast 1.")
     
-    if cash >= total_cost:
+    elif cash >= total_cost:
         cash -= total_cost
         weed += amount
         print()

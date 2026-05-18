@@ -6,7 +6,7 @@ weed_price = 20
 running = True
 
 while running:
-    print("1. Check stats\n2. Do small job\n3. Buy 1 Weed\nq. Quit")
+    print("1. Check stats\n2. Do small job\n3. Buy 1 Weed\n4. Sell 1 Weed\nq. Quit")
     choice = input("Choose: ")
     
     if choice == "1":
@@ -36,7 +36,20 @@ while running:
             print()
             print("You do not have enough cash.")
             print()
+    
+    elif choice == "4":
+        if weed > 1:
+            weed -= 1
+            print()
+            print("You sold 1 Weed.")
+        else:
+            print()
+            print("You do not have enough Weed.")
+            print()
             
+    
+    
+    
     elif choice == "q":
         print("Quit")
         running = False

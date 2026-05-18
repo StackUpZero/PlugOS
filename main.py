@@ -27,6 +27,8 @@ def show_stats():
     print(f"Reputation: {reputation}")
     print(f"Day: {day}")
     print(f"Weed: {weed}")
+    print(f"Weed buy price: £{weed_buy_price}")
+    print(f"Weed sell price: £{weed_sell_price}")
     print()
      
 # Show Menu
@@ -92,15 +94,18 @@ def buy_weed():
     elif cash >= total_cost:
         cash -= total_cost
         weed += amount
+        day +=1
         print()
         print(f"You bought {amount} Weed for £{total_cost}.")
         print(f"Your current cash is £{cash}.")
         print()
+        update_prices()
 
     else:
         print()
         print("You do not have enough cash!")
         print()  
+        
 # Sell Weed
 def sell_weed():
     global cash, weed, day

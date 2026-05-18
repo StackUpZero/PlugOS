@@ -1,3 +1,9 @@
+##########
+# Imports
+##########
+
+import random
+
 ############
 # Inventory
 ############
@@ -30,7 +36,13 @@ def show_menu():
     print("3. Buy 1 Weed")
     print("4. Sell 1 Weed")
     print("q. Quit")
-    
+   
+# Update Prices
+def update_prices():
+    global weed_buy_price, weed_sell_price
+    weed_buy_price = random.randint(15,30)
+    weed_sell_price = random.randint(15,30)
+ 
 # Do small job
 def do_small_job():
     global cash, reputation, day
@@ -76,6 +88,8 @@ def sell_weed():
 ############
 # Game Loop
 ############
+
+update_prices()
 
 while running:
     show_menu()

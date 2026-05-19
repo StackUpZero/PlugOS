@@ -75,6 +75,11 @@ def get_amount(question):
         print("Please enter a valid number.")
         print()
         return None
+    if amount <= 0:
+        print()
+        print("Amount must be atleast 1.")
+        print()
+        return None
 
     return amount
        

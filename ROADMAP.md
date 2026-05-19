@@ -35,7 +35,7 @@
 
 - [x] Understand that Python runs from top to bottom
 - [x] Understand why imports come first
-- [ ] Understand why variables are created before functions use them
+- [x] Understand why variables are created before functions use them
 - [ ] Understand why the game loop sits at the bottom
 - [ ] Understand how `while running:` keeps the game alive
 

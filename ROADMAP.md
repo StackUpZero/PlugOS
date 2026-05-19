@@ -33,7 +33,7 @@
 <details>
 <summary><strong>Lesson 1 — Program Flow</strong></summary>
 
-- [ ] Understand that Python runs from top to bottom
+- [x] Understand that Python runs from top to bottom
 - [ ] Understand why imports come first
 - [ ] Understand why variables are created before functions use them
 - [ ] Understand why the game loop sits at the bottom

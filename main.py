@@ -165,6 +165,11 @@ while running:
     elif choice == "4":
         sell_weed()
     
+    elif choice =="5":
+        print()
+        print("You rested for the day.")
+        print()
+    
     elif choice == "q":
         print("Quit")
         running = False

@@ -39,6 +39,7 @@ def show_menu():
     print("2. Do small job")
     print("3. Buy Weed")
     print("4. Sell Weed")
+    print("5. Rest")
     print("q. Quit")
     print()
     print("Current Market")
@@ -144,7 +145,13 @@ def check_game_over():
     if cash >= goal_cash:
         print("You Won!")
         running = False
-                        
+
+# Rest
+def rest():
+    print()
+    print("You rested for the day.")
+    print()
+          
 ############
 # Game Loop
 ############
@@ -166,10 +173,8 @@ while running:
         sell_weed()
     
     elif choice =="5":
-        print()
-        print("You rested for the day.")
-        print()
-    
+        rest()
+        
     elif choice == "q":
         print("Quit")
         running = False
